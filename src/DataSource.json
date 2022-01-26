@@ -1,0 +1,36 @@
+{
+"Data" :[
+    {   "id" : 31,
+        "name" : "Region",
+        "description" : "The region",
+        "priority" : 1,
+        "storeId" : 14,
+        "values" : [ {
+            "id" : 69,
+            "Value" : "Europe",
+            "keyId" : 31
+          }, {
+            "id" : 70,
+            "Value" : "Africa",
+            "keyId" : 31
+          } ] },
+    {   "id" : 32,
+        "name" : "Profession",
+        "description" : "The profession",
+        "priority" : 2,
+        "storeId" : 14,
+        "values" : [ {
+            "id" : 71,
+            "Value" : "Doctor",
+            "keyId" : 32
+          }, {
+            "id" : 72,
+            "Value" : "Professor",
+            "keyId" : 32
+          }, {
+            "id" : 73,
+            "Value" : "Student",
+            "keyId" : 32
+          } ] }
+
+]}
