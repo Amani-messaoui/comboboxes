@@ -30,6 +30,7 @@ background-size: cover;
 }
 .css-sghohy-MuiButtonBase-root-MuiButton-root:hover {
   background-color: #00512D;
+  transform: scale(1.1);
 }
 .css-sghohy-MuiButtonBase-root-MuiButton-root{
   background-color: #00512D !important;
