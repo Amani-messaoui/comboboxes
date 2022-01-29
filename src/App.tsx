@@ -2,7 +2,7 @@ import * as React from 'react';
 import './App.css';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import SendIcon from '@mui/icons-material/Send';
-import {IconButton,FormHelperText, Collapse, FormControl, MenuItem, InputLabel, Button, Alert} from '@mui/material';
+import {IconButton, Collapse, FormControl, MenuItem, InputLabel, Button, Alert} from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
 function App() {
@@ -17,12 +17,11 @@ function App() {
   const handleChangeValue = (event: SelectChangeEvent<typeof SelectValue>) => {
     setSelectValue(event.target.value);
   };
-  const nameData = SelectName && appData.filter((ex: any) => ex.id === SelectName )[0].name 
    
   const submit = () => {
     const data = {
-      Name: nameData ,
-      Value : SelectValue
+      Region: SelectName ,
+      Profession: SelectValue
     };
     fetch('http://localhost:3000', {
       method: 'POST',
@@ -48,7 +47,7 @@ function App() {
     <div className='App' >
       <form className="Rectangle-2140">
         <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-          <InputLabel id="demo-simple-select-standard-label">Name</InputLabel>
+          <InputLabel id="demo-simple-select-standard-label">{appData[0].name}</InputLabel>
           <Select 
             labelId="demo-simple-select-standard-label"
             id="demo-simple-select-standard"
@@ -57,14 +56,15 @@ function App() {
             label="Name"
           >
             {appData.map((e: any, index: any) =>
-              <MenuItem key={index} value={e.id}>
-                {e.name}
+             e.values.filter((ex: any)=> ex.keyId === appData[0].id).map((ep: any)=>
+              <MenuItem key={index} value={ep.Value}>
+                {ep.Value}
               </MenuItem>
-            )}
+            ))}
           </Select>
         </FormControl>
         <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }} >
-          <InputLabel id="demo-simple-select-standard-label">Value</InputLabel>
+          <InputLabel id="demo-simple-select-standard-label">{appData[1].name}</InputLabel>
           <Select
             labelId="demo-simple-select-standard-label"
             id="demo-simple-select-standard"
@@ -73,10 +73,10 @@ function App() {
             label="Value"
           >
             {appData.map((e: any, index: any) =>
-              e.values.filter((ex: any) => ex.keyId === SelectName).map((ep: any) =>
-                <MenuItem key={index} value={ep.Value}>
-                  {ep.Value}
-                </MenuItem>
+             e.values.filter((ex: any)=> ex.keyId === appData[1].id).map((ep: any)=>
+              <MenuItem key={index} value={ep.Value}>
+                {ep.Value}
+              </MenuItem>
               )
             )}
           </Select>
@@ -106,8 +106,8 @@ function App() {
           // sx={{ mb: 2 }}
         >
          Your request is successfully sent — <strong>check it out!</strong> <br/>
-         <strong>Name : </strong> {nameData} <br/> 
-         <strong>Value : </strong> {SelectValue}
+         <strong>Region : </strong> {SelectName} <br/> 
+         <strong>Profession : </strong> {SelectValue}
          
         </Alert>
         </Collapse>
