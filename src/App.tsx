@@ -57,8 +57,8 @@ function App() {
               onChange={(e: any) => handleChange(e, i)}
               label="Name">
               {em.values.filter((ex: any) => ex.keyId === em.id).map((ep: any, index: any ) =>
-                <MenuItem  key={index} value={ep.Value}  >
-                 {ep.Value}
+                <MenuItem  key={index} value={ep.value}  >
+                 {ep.value}
                 </MenuItem>
               )}
             </Select> 

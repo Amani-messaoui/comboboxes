@@ -7,11 +7,11 @@
         "storeId" : 14,
         "values" : [ {
             "id" : 69,
-            "Value" : "Europe",
+            "value" : "Europe",
             "keyId" : 31
           }, {
             "id" : 70,
-            "Value" : "Africa",
+            "value" : "Africa",
             "keyId" : 31
           } ] },
     {   "id" : 32,
@@ -21,15 +21,15 @@
         "storeId" : 14,
         "values" : [ {
             "id" : 71,
-            "Value" : "Doctor",
+            "value" : "Doctor",
             "keyId" : 32
           }, {
             "id" : 72,
-            "Value" : "Professor",
+            "value" : "Professor",
             "keyId" : 32
           }, {
             "id" : 73,
-            "Value" : "Student",
+            "value" : "Student",
             "keyId" : 32
           } ] }
 ]}
